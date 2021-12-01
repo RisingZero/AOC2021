@@ -16,5 +16,7 @@ int main(void) {
     prev = value;
   }
 
-  printf("Tot increasing: %d", numIncreasing);
+  printf("Tot increasing: %d\n", numIncreasing);
+  
+  return 0;
 }
