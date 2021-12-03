@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int main(void) {
   FILE *fp;
@@ -8,6 +9,7 @@ int main(void) {
   int i, j, len;
 
   char mcb[512+1], lcb[512+1];
+  int  MCB,  LCB;
 
   fp = fopen("input.txt", "r");
   while (!feof(fp) && (fscanf(fp, "%s", buff) == 1)) {
@@ -21,11 +23,18 @@ int main(void) {
     }
   }
 
-  for (i = 0; i >= 0; i--) {
+  for (i = 0; i < len; i++) {
       if (occ[0][i] > occ[1][i]) {
-          mc
-      } 
+          mcb[i] = '0';
+          lcb[i] = '1';
+      } else {
+          mcb[i] = '1';
+          lcb[i] = '0';
+      }
   }
+  mcb[len] = '\0'; lcb[len] =  '\0';
 
+  MCB  = atoi(mcb); LCB = atoi(lcb);
+  printf("%s %s\n", mcb, lcb);
   return 0;
 }
